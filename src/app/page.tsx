@@ -1,7 +1,8 @@
 import Hero from "@/components/layout/Hero";
-// import Features from "@/components/layout/Features";
+import Features from "@/components/layout/Features";
 import { company } from "@/resources/content";
 import { baseURL } from "@/resources/config";
+import BenefitsSection from "@/components/layout/Benefit";
 
 export const revalidate = 86400;
 
@@ -60,7 +61,8 @@ export default function Home() {
         }}
       />
       <Hero />
-      {/* <Features /> */}
+      <Features />
+      <BenefitsSection />
     </div>
   );
 }
