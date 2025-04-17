@@ -3,6 +3,8 @@ import Features from "@/components/layout/Features";
 import { company } from "@/resources/content";
 import { baseURL } from "@/resources/config";
 import BenefitsSection from "@/components/layout/Benefit";
+// import Testimonials from "@/components/layout/Testimonials";
+import Pricing from "@/components/layout/Pricing";
 
 export const revalidate = 86400;
 
@@ -63,6 +65,8 @@ export default function Home() {
       <Hero />
       <Features />
       <BenefitsSection />
+      <Pricing />
+      {/* <Testimonials /> */}
     </div>
   );
 }

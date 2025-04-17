@@ -20,6 +20,8 @@ export interface TestimonialItem {
   name: string;
   title: string;
   testimonial: string;
+  avatar: string;
+  rating: number;
 }
 
 export interface Testimonials {
@@ -30,7 +32,7 @@ export interface Testimonials {
 export interface SocialItem {
   name: string;
   url: string;
-  icon: string; // optionally you could restrict this to specific icon names
+  icon: string; 
 }
 
 export interface Social {
@@ -46,7 +48,13 @@ export interface PricingItem {
 
 export interface Pricing {
   display: boolean;
+  title: string;
+  description: string;
   items: PricingItem[];
+  popular: number; 
+  price: number; 
+  buttonText: string;
+  benefitList: string[];
 }
 
 // Data
@@ -90,33 +98,43 @@ export const testimonials: Testimonials = {
   items: [
     {
       name: "John Doe",
+      avatar: "https://static.wikia.nocookie.net/gensin-impact/images/6/60/Raiden_Shogun_Card.png/revision/latest/scale-to-width-down/1000?cb=20241007221517",
       title: "CEO, Acme Inc.",
       testimonial:
         "Mendowa has transformed the way we work. We are more productive and organized than ever.",
+      rating: 5,
     },
     {
       name: "Jane Smith",
+      avatar: "https://static.wikia.nocookie.net/gensin-impact/images/6/60/Raiden_Shogun_Card.png/revision/latest/scale-to-width-down/1000?cb=20241007221517",
       title: "CTO, Tech Corp.",
       testimonial:
         "Mendowa is the best tool we have ever used. It has everything we need in one place.",
+      rating: 4,
     },
     {
       name: "Bob Johnson",
+      avatar: "https://static.wikia.nocookie.net/gensin-impact/images/6/60/Raiden_Shogun_Card.png/revision/latest/scale-to-width-down/1000?cb=20241007221517",
       title: "Product Manager, Startup Co.",
       testimonial:
         "Mendowa has made our team more efficient and effective. We love it!",
+      rating: 5,
     },
     {
       name: "Alice Brown",
+      avatar: "https://static.wikia.nocookie.net/gensin-impact/images/6/60/Raiden_Shogun_Card.png/revision/latest/scale-to-width-down/1000?cb=20241007221517",
       title: "Designer, Creative Agency.",
       testimonial:
         "Mendowa is a game changer. It has simplified our workflow and improved collaboration.",
+      rating: 4,
     },
     {
       name: "Charlie Green",
+      avatar: "https://static.wikia.nocookie.net/gensin-impact/images/6/60/Raiden_Shogun_Card.png/revision/latest/scale-to-width-down/1000?cb=20241007221517",
       title: "Marketing Director, Global Corp.",
       testimonial:
         "Mendowa has helped us streamline our processes and improve communication. Highly recommend!",
+      rating: 5,
     },
   ],
 };
@@ -144,35 +162,45 @@ export const social: Social = {
 
 export const pricing: Pricing = {
   display: true,
+  title: "Simple pricing",
+  description: "Choose the plan that suits your team.",
+  popular: 1,
+  price: 0, // bisa jadi default atau diambil dari plan pertama
+  buttonText: "Get Started Free",
+  benefitList: ["Flexible plans", "Cancel anytime", "30-day refund policy"],
   items: [
     {
       name: "Free",
       price: "$0",
       features: [
-        "Up to 5 users",
-        "Basic features",
+        "1 team member",
+        "1 GB storage",
+        "Up to 2 pages",
         "Community support",
-        "Limited integrations",
+        "Basic AI assistance",
       ],
     },
     {
-      name: "Pro",
-      price: "$10/user/month",
+      name: "Premium",
+      price: "$45",
       features: [
-        "Up to 50 users",
-        "All features",
-        "Priority support",
-        "Unlimited integrations",
+        "Up to 4 team members",
+        "8 GB storage",
+        "Up to 6 pages",
+        "Priority email support",
+        "Advanced AI assistance",
+        "Sticker Jomok Premium",
       ],
     },
     {
       name: "Enterprise",
-      price: "Contact us",
+      price: "$120",
       features: [
-        "Unlimited users",
-        "All features",
-        "Dedicated support",
-        "Custom integrations",
+        "Up to 10 team members",
+        "20 GB storage",
+        "Up to 10 pages",
+        "Phone & email support",
+        "Custom AI solutions",
       ],
     },
   ],
