@@ -1,30 +1,36 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Check } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Switch } from "@/components/ui/switch"
-import { Label } from "@/components/ui/label"
-import { motion } from "framer-motion"
-import { pricing } from "@/resources/content"
+import { useState, useEffect } from "react";
+import { Check } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Switch } from "@/components/ui/switch";
+import { Label } from "@/components/ui/label";
+import { motion } from "framer-motion";
+import { pricing } from "@/resources/content";
 
 export default function Pricing() {
-  const [billingCycle, setBillingCycle] = useState<"monthly" | "yearly">("monthly")
+  const [billingCycle, setBillingCycle] = useState<"monthly" | "yearly">(
+    "monthly"
+  );
 
-  useEffect(() => {
-  }, [billingCycle])
+  useEffect(() => {}, [billingCycle]);
 
   const getYearlyPrice = (price: string) => {
-    const numericPrice = Number.parseFloat(price.replace("$", ""))
-    if (numericPrice === 0) return "$0"
-    const yearlyPrice = numericPrice * 12 * 0.8
-    return `$${yearlyPrice}`
-  }
+    const numericPrice = Number.parseFloat(price.replace("$", ""));
+    if (numericPrice === 0) return "$0";
+    const yearlyPrice = numericPrice * 12 * 0.8;
+    return `$${yearlyPrice}`;
+  };
 
   return (
-    <section className="py-20 px-4 bg-white overflow-hidden">
+    <section className="py-20 px-4 bg-accent overflow-hidden">
       <div className="container mx-auto max-w-6xl">
         <motion.div
           className="text-center mb-12"
@@ -57,7 +63,11 @@ export default function Pricing() {
           >
             <Label
               htmlFor="billing-toggle"
-              className={`${billingCycle === "monthly" ? "font-medium" : "text-muted-foreground"}`}
+              className={`${
+                billingCycle === "monthly"
+                  ? "font-medium"
+                  : "text-muted-foreground"
+              }`}
             >
               Monthly
             </Label>
@@ -65,12 +75,18 @@ export default function Pricing() {
               <Switch
                 id="billing-toggle"
                 checked={billingCycle === "yearly"}
-                onCheckedChange={(checked) => setBillingCycle(checked ? "yearly" : "monthly")}
+                onCheckedChange={(checked) =>
+                  setBillingCycle(checked ? "yearly" : "monthly")
+                }
               />
             </motion.div>
             <Label
               htmlFor="billing-toggle"
-              className={`${billingCycle === "yearly" ? "font-medium" : "text-muted-foreground"}`}
+              className={`${
+                billingCycle === "yearly"
+                  ? "font-medium"
+                  : "text-muted-foreground"
+              }`}
             >
               Yearly{" "}
               <motion.div
@@ -79,7 +95,10 @@ export default function Pricing() {
                 transition={{ duration: 0.5 }}
                 className="inline-block"
               >
-                <Badge variant="outline" className="ml-1 text-emerald-600 bg-emerald-50">
+                <Badge
+                  variant="outline"
+                  className="ml-1 text-emerald-600 bg-emerald-50"
+                >
                   Save 20%
                 </Badge>
               </motion.div>
@@ -102,7 +121,9 @@ export default function Pricing() {
               >
                 <Check className="h-4 w-4 mr-1 text-emerald-500" />
                 <span>{benefit}</span>
-                {index < pricing.benefitList.length - 1 && <span className="mx-2">•</span>}
+                {index < pricing.benefitList.length - 1 && (
+                  <span className="mx-2">•</span>
+                )}
               </motion.div>
             ))}
           </motion.div>
@@ -125,7 +146,11 @@ export default function Pricing() {
               }}
             >
               <Card
-                className={`relative flex flex-col h-full ${index === pricing.popular ? "border-primary shadow-lg" : "border-border"}`}
+                className={`relative flex flex-col h-full ${
+                  index === pricing.popular
+                    ? "border-primary shadow-lg"
+                    : "border-border"
+                }`}
               >
                 {index === pricing.popular && (
                   <motion.div
@@ -149,7 +174,9 @@ export default function Pricing() {
                         repeatType: "loop",
                       }}
                     >
-                      <Badge className="bg-primary text-primary-foreground">Most Popular</Badge>
+                      <Badge className="bg-primary text-primary-foreground">
+                        Most Popular
+                      </Badge>
                     </motion.div>
                   </motion.div>
                 )}
@@ -163,9 +190,13 @@ export default function Pricing() {
                     transition={{ duration: 0.4 }}
                   >
                     <span className="text-3xl font-bold">
-                      {billingCycle === "monthly" ? item.price : getYearlyPrice(item.price)}
+                      {billingCycle === "monthly"
+                        ? item.price
+                        : getYearlyPrice(item.price)}
                     </span>
-                    <span className="text-muted-foreground ml-1">/{billingCycle === "monthly" ? "month" : "year"}</span>
+                    <span className="text-muted-foreground ml-1">
+                      /{billingCycle === "monthly" ? "month" : "year"}
+                    </span>
                   </motion.div>
                 </CardHeader>
                 <CardContent className="flex-grow">
@@ -188,10 +219,20 @@ export default function Pricing() {
                   </ul>
                 </CardContent>
                 <CardFooter className="pt-4 pb-6">
-                  <motion.div className="w-full" whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
+                  <motion.div
+                    className="w-full"
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
+                  >
                     <Button
-                      className={`w-full ${index === pricing.popular ? "bg-primary hover:bg-primary/90" : "bg-primary/10 text-primary hover:bg-primary/20"}`}
-                      variant={index === pricing.popular ? "default" : "outline"}
+                      className={`w-full ${
+                        index === pricing.popular
+                          ? "bg-primary hover:bg-primary/90"
+                          : "bg-primary/10 text-primary hover:bg-primary/20"
+                      }`}
+                      variant={
+                        index === pricing.popular ? "default" : "outline"
+                      }
                     >
                       {pricing.buttonText}
                     </Button>
@@ -203,5 +244,5 @@ export default function Pricing() {
         </div>
       </div>
     </section>
-  )
+  );
 }

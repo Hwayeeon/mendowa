@@ -32,7 +32,7 @@ export interface Testimonials {
 export interface SocialItem {
   name: string;
   url: string;
-  icon: string; 
+  icon: string;
 }
 
 export interface Social {
@@ -51,8 +51,8 @@ export interface Pricing {
   title: string;
   description: string;
   items: PricingItem[];
-  popular: number; 
-  price: number; 
+  popular: number;
+  price: number;
   buttonText: string;
   benefitList: string[];
 }
@@ -72,7 +72,8 @@ export const features: Features = {
   items: [
     {
       title: "All-in-one app",
-      description: "Mendowa replaces Jira, Slack, and Notion with a single app.",
+      description:
+        "Mendowa replaces Jira, Slack, and Notion with a single app.",
     },
     {
       title: "Easy to use",
@@ -98,7 +99,8 @@ export const testimonials: Testimonials = {
   items: [
     {
       name: "John Doe",
-      avatar: "https://static.wikia.nocookie.net/gensin-impact/images/6/60/Raiden_Shogun_Card.png/revision/latest/scale-to-width-down/1000?cb=20241007221517",
+      avatar:
+        "https://static.wikia.nocookie.net/gensin-impact/images/6/60/Raiden_Shogun_Card.png/revision/latest/scale-to-width-down/1000?cb=20241007221517",
       title: "CEO, Acme Inc.",
       testimonial:
         "Mendowa has transformed the way we work. We are more productive and organized than ever.",
@@ -106,7 +108,8 @@ export const testimonials: Testimonials = {
     },
     {
       name: "Jane Smith",
-      avatar: "https://static.wikia.nocookie.net/gensin-impact/images/6/60/Raiden_Shogun_Card.png/revision/latest/scale-to-width-down/1000?cb=20241007221517",
+      avatar:
+        "https://static.wikia.nocookie.net/gensin-impact/images/6/60/Raiden_Shogun_Card.png/revision/latest/scale-to-width-down/1000?cb=20241007221517",
       title: "CTO, Tech Corp.",
       testimonial:
         "Mendowa is the best tool we have ever used. It has everything we need in one place.",
@@ -114,7 +117,8 @@ export const testimonials: Testimonials = {
     },
     {
       name: "Bob Johnson",
-      avatar: "https://static.wikia.nocookie.net/gensin-impact/images/6/60/Raiden_Shogun_Card.png/revision/latest/scale-to-width-down/1000?cb=20241007221517",
+      avatar:
+        "https://static.wikia.nocookie.net/gensin-impact/images/6/60/Raiden_Shogun_Card.png/revision/latest/scale-to-width-down/1000?cb=20241007221517",
       title: "Product Manager, Startup Co.",
       testimonial:
         "Mendowa has made our team more efficient and effective. We love it!",
@@ -122,7 +126,8 @@ export const testimonials: Testimonials = {
     },
     {
       name: "Alice Brown",
-      avatar: "https://static.wikia.nocookie.net/gensin-impact/images/6/60/Raiden_Shogun_Card.png/revision/latest/scale-to-width-down/1000?cb=20241007221517",
+      avatar:
+        "https://static.wikia.nocookie.net/gensin-impact/images/6/60/Raiden_Shogun_Card.png/revision/latest/scale-to-width-down/1000?cb=20241007221517",
       title: "Designer, Creative Agency.",
       testimonial:
         "Mendowa is a game changer. It has simplified our workflow and improved collaboration.",
@@ -130,7 +135,8 @@ export const testimonials: Testimonials = {
     },
     {
       name: "Charlie Green",
-      avatar: "https://static.wikia.nocookie.net/gensin-impact/images/6/60/Raiden_Shogun_Card.png/revision/latest/scale-to-width-down/1000?cb=20241007221517",
+      avatar:
+        "https://static.wikia.nocookie.net/gensin-impact/images/6/60/Raiden_Shogun_Card.png/revision/latest/scale-to-width-down/1000?cb=20241007221517",
       title: "Marketing Director, Global Corp.",
       testimonial:
         "Mendowa has helped us streamline our processes and improve communication. Highly recommend!",
