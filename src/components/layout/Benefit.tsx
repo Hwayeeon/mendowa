@@ -63,7 +63,7 @@ export default function BenefitsSection() {
   };
 
   return (
-    <section className="flex w-full py-16 md:py-24 lg:py-32 bg-gradient-to-b from-background to-muted/50 relative overflow-hidden">
+    <section className="flex w-full py-16 md:py-24 lg:py-32 bg-gradient-to-b from-background to-muted/50 min-h-screen relative overflow-hidden">
       <div className="container px-4 md:px-6 relative z-10 mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

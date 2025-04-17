@@ -48,7 +48,7 @@ export default function Features() {
     <section
       id="features"
       ref={ref}
-      className="py-24 relative overflow-hidden bg-gradient-to-b from-background via-background to-background/80"
+      className="py-24 relative overflow-hidden bg-gradient-to-b from-background via-background to-background/80 min-h-screen"
     >
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <motion.div
