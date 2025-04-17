@@ -42,7 +42,7 @@ export default function Navbar() {
     <div className="relative z-50">
       <header
         className={`fixed top-0 left-0 right-0 z-50 w-full backdrop-blur-lg transition-all duration-300 ${
-          isScrolled ? "bg-black/80 shadow-sm" : "bg-transparent"
+          isScrolled ? "dark:bg-black/80 shadow-sm" : "bg-transparent"
         }`}
       >
         <div className="container mx-auto flex h-16 items-center justify-between px-4 lg:px-8">
